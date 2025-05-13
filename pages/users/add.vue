@@ -1,3 +1,9 @@
+<script setup>
+definePageMeta({
+  layout: 'users'
+})
+</script>
+
 <template>
   <div>
     <h1>

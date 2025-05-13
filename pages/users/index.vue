@@ -1,5 +1,7 @@
-<script setup lang="ts">
-
+<script setup>
+  definePageMeta({
+    layout: 'users'
+  })
 </script>
 
 <template>
