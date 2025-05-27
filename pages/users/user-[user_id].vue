@@ -1,13 +1,31 @@
 <script setup lang="ts">
-const { user_id } = useRoute().params
 definePageMeta({
   layout: 'users'
 })
+
+const { user_id } = useRoute().params
+
+const { data } = await useFetch(`https://dummyjson.com/users/${user_id}`)
 </script>
 
 <template>
-  <div>
-    <h1>ID of user: {{ user_id }}</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card h-100">
+        <img :src="data.image" class="card-img-top" :alt="`${data.firstName} ${data.lastName}`">
+        <div class="card-body">
+          <h5 class="card-title">{{ data.firstName }} {{ data.lastName }}</h5>
+          <p class="card-text">
+            <strong>Age:</strong> {{ data.age }}<br>
+            <strong>Email:</strong> {{ data.email }}<br>
+            <strong>Phone:</strong> {{ data.phone }}<br>
+            <strong>Company:</strong> {{ data.company.name }}<br>
+            <strong>Role:</strong> {{ data.company.title }}<br>
+            <strong>Location:</strong> {{ data.address.city }}, {{ data.address.state }}, {{ data.address.country }}
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
