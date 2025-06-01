@@ -10,6 +10,10 @@ const { data } = await useFetch(`https://dummyjson.com/users/${user_id}`)
 
 <template>
   <div class="row justify-content-center">
+    <Head>
+      <Title>User ID: {{ user_id }}</Title>
+      <Meta name="description" content="All users">
+    </Head>
     <div class="col-md-6">
       <div class="card h-100">
         <img :src="data.image" class="card-img-top" :alt="`${data.firstName} ${data.lastName}`">

@@ -1,4 +1,11 @@
 <script setup lang="ts">
+useHead({
+  title: 'Contacts',
+  meta: [
+    { name: 'description', content: 'Contact page' }
+  ]
+})
+
 const name = ref('')
 const email = ref('')
 const message = ref('')

@@ -9,6 +9,10 @@
 
 <template>
   <div>
+    <Head>
+      <Title>All users from website</Title>
+      <Meta name="description" content="All users"/>
+    </Head>
     <h1>All users</h1>
     <ul class="d-flex justify-content-between flex-wrap list-unstyled gap-3">
       <li
